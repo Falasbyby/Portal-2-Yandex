@@ -1,0 +1,34 @@
+newmtl Part4Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0627451 0.0627451 0.0627451 
+
+d 1
+
+Ns 0
+
+map_Ka Part4_diff.png
+map_Kd Part4_diff.png
+map_d Part4_diff.png
+
+newmtl Button1Mtl
+Material Color
+Ka 0.560499 0.0169881 0.00775103
+Kd 0.560499 0.0169881 0.00775103
+Ks 0.0351686 0.00106592 0.000486339 
+
+d 1
+
+Ns 0
+
+newmtl Bottom1Mtl
+Material Color
+Ka 0.940601 0.940601 0.940601
+Kd 0.940601 0.940601 0.940601
+Ks 0.0590181 0.0590181 0.0590181 
+
+d 1
+
+Ns 0
+

@@ -1,0 +1,60 @@
+newmtl Connector1Mtl
+Material Color
+Ka 0.124741 0.113921 0.121986
+Kd 0.124741 0.113921 0.121986
+Ks 0.024459 0.0223374 0.0239188 
+
+d 1
+
+Ns 255
+
+map_Bump Connector1_nmap.png
+
+map_Ns Connector1_spec.png
+
+newmtl Wall1Mtl
+Material Color
+Ka 0.124741 0.113921 0.121986
+Kd 0.124741 0.113921 0.121986
+Ks 0.00538098 0.00491424 0.00526213 
+
+d 1
+
+Ns 0
+
+map_Ka Wall1_diff.png
+map_Kd Wall1_diff.png
+map_d Wall1_diff.png
+
+map_Bump Wall1_nmap.png
+
+map_Ns Wall1_spec.png
+
+newmtl Source1Mtl
+Material Color
+Ka 0.560499 0.0169881 0.00775103
+Kd 0.560499 0.0169881 0.00775103
+Ks 0.0505548 0.00153226 0.000699112 
+
+d 0.4
+
+Ns 0
+
+newmtl Base1Mtl
+Material Color
+Ka 0.940601 0.940601 0.940601
+Kd 0.940601 0.940601 0.940601
+Ks 0.627067 0.627067 0.627067 
+
+d 1
+
+Ns 255
+
+map_Ka Base1_diff.png
+map_Kd Base1_diff.png
+map_d Base1_diff.png
+
+map_Bump Base1_nmap.png
+
+map_Ns Base1_spec.png
+

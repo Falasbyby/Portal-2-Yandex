@@ -1,0 +1,1308 @@
+newmtl Union7Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.666667 0.666667 0.666667 
+
+d 0.101961
+
+Ns 255
+
+map_Ka Union7_diff.png
+map_Kd Union7_diff.png
+map_d Union7_diff.png
+
+newmtl Part1Mtl
+Material Color
+Ka 0.00715504 0.018913 0.0315514
+Kd 0.00715504 0.018913 0.0315514
+Ks 0.000448943 0.0011867 0.0019797 
+
+d 0.4
+
+Ns 0
+
+newmtl Part7Mtl
+Material Color
+Ka 0.2468 0.259027 0.339223
+Kd 0.2468 0.259027 0.339223
+Ks 0.0154855 0.0162527 0.0212846 
+
+d 1
+
+Ns 0
+
+newmtl Union1Mtl
+Material Color
+Ka 0.618686 0.618686 0.618686
+Kd 0.618686 0.618686 0.618686
+Ks 0.412457 0.412457 0.412457 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Part235Mtl
+Material Color
+Ka 0.103634 0.113921 0.147998
+Kd 0.103634 0.113921 0.147998
+Ks 0.00447049 0.00491424 0.00638423 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Wedge1Mtl
+Material Color
+Ka 0.618686 0.618686 0.618686
+Kd 0.618686 0.618686 0.618686
+Ks 0.0266884 0.0266884 0.0266884 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part74Mtl
+Material Color
+Ka 0.598942 0.605484 0.645555
+Kd 0.598942 0.605484 0.645555
+Ks 0.399295 0.403656 0.43037 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Union2Mtl
+Material Color
+Ka 0.373615 0.368591 0.383775
+Kd 0.373615 0.368591 0.383775
+Ks 0.373615 0.368591 0.383775 
+
+d 1
+
+Ns 0
+
+map_Ka Union2_diff.png
+map_Kd Union2_diff.png
+map_d Union2_diff.png
+
+map_Bump Union2_nmap.png
+
+map_Ns Union2_spec.png
+
+newmtl Part8Mtl
+Material Color
+Ka 0.157281 0.325037 0.598942
+Kd 0.157281 0.325037 0.598942
+Ks 0.157281 0.325037 0.598942 
+
+d 1
+
+Ns 0
+
+map_Ka Union2_diff.png
+map_Kd Union2_diff.png
+map_d Union2_diff.png
+
+map_Bump Union2_nmap.png
+
+map_Ns Union2_spec.png
+
+newmtl Part13Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.301961
+
+Ns 0
+
+map_Ka Part13_diff.png
+map_Kd Part13_diff.png
+map_d Part13_diff.png
+
+newmtl Wedge4Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.2
+
+Ns 0
+
+map_Ka Wedge4_diff.png
+map_Kd Wedge4_diff.png
+map_d Wedge4_diff.png
+
+newmtl Part185Mtl
+Material Color
+Ka 0.940601 0.701169 0.154152
+Kd 0.940601 0.701169 0.154152
+Ks 0.0368863 0.0274968 0.00604519 
+
+d 1
+
+Ns 0
+
+map_Ka Part185_diff.png
+map_Kd Part185_diff.png
+map_d Part185_diff.png
+
+map_Bump Part185_nmap.png
+
+map_Ns Part185_spec.png
+
+newmtl Wedge7Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.101961
+
+Ns 0
+
+map_Ka Wedge4_diff.png
+map_Kd Wedge4_diff.png
+map_d Wedge4_diff.png
+
+newmtl Part193Mtl
+Material Color
+Ka 0.373615 0.0677246 0.0677246
+Kd 0.373615 0.0677246 0.0677246
+Ks 0.0336986 0.00610849 0.00610849 
+
+d 1
+
+Ns 0
+
+newmtl Wedge15Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.301961
+
+Ns 0
+
+map_Ka Wedge4_diff.png
+map_Kd Wedge4_diff.png
+map_d Wedge4_diff.png
+
+newmtl Union9Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.666667 0.666667 0.666667 
+
+d 0.2
+
+Ns 255
+
+map_Ka Part106_diff.png
+map_Kd Part106_diff.png
+map_d Part106_diff.png
+
+newmtl Part21Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.25098
+
+Ns 0
+
+map_Ka Part13_diff.png
+map_Kd Part13_diff.png
+map_d Part13_diff.png
+
+newmtl Part209Mtl
+Material Color
+Ka 0.0962661 0.101145 0.133209
+Kd 0.0962661 0.101145 0.133209
+Ks 0.00415266 0.00436312 0.00574625 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part22Mtl
+Material Color
+Ka 0.157281 0.325037 0.598942
+Kd 0.157281 0.325037 0.598942
+Ks 0.0141861 0.0293171 0.0540222 
+
+d 1
+
+Ns 0
+
+newmtl Union3Mtl
+Material Color
+Ka 0.373615 0.368591 0.383775
+Kd 0.373615 0.368591 0.383775
+Ks 0.249077 0.245727 0.25585 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Part205Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.666667 0.666667 0.666667 
+
+d 0.25098
+
+Ns 255
+
+map_Ka Part13_diff.png
+map_Kd Part13_diff.png
+map_d Part13_diff.png
+
+newmtl Part24Mtl
+Material Color
+Ka 0.306635 0.302126 0.311181
+Kd 0.306635 0.302126 0.311181
+Ks 0.204423 0.201417 0.207454 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Part73Mtl
+Material Color
+Ka 0.481952 0.487765 0.517401
+Kd 0.481952 0.487765 0.517401
+Ks 0.321302 0.325177 0.344934 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Part25Mtl
+Material Color
+Ka 0.139022 0.193972 0.271577
+Kd 0.139022 0.193972 0.271577
+Ks 0.0926816 0.129315 0.181052 
+
+d 0.501961
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Part89Mtl
+Material Color
+Ka 0.358654 0.113921 0.0315514
+Kd 0.358654 0.113921 0.0315514
+Ks 0.0323492 0.0102752 0.00284581 
+
+d 1
+
+Ns 0
+
+newmtl Part197Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.666667 0.666667 0.666667 
+
+d 0.301961
+
+Ns 255
+
+map_Ka Part13_diff.png
+map_Kd Part13_diff.png
+map_d Part13_diff.png
+
+newmtl Union30Mtl
+Material Color
+Ka 0.554227 0.363604 0.116576
+Kd 0.554227 0.363604 0.116576
+Ks 0.0239078 0.0156849 0.00502876 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part90Mtl
+Material Color
+Ka 0.280124 0.275833 0.284452
+Kd 0.280124 0.275833 0.284452
+Ks 0.18675 0.183889 0.189635 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Union10Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.666667 0.666667 0.666667 
+
+d 0.101961
+
+Ns 255
+
+map_Ka Part106_diff.png
+map_Kd Part106_diff.png
+map_d Part106_diff.png
+
+newmtl Part91Mtl
+Material Color
+Ka 0.373615 0.368591 0.383775
+Kd 0.373615 0.368591 0.383775
+Ks 0.0732579 0.0722727 0.0752499 
+
+d 1
+
+Ns 255
+
+map_Bump Part91_nmap.png
+
+map_Ns Part91_spec.png
+
+newmtl Part225Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.101961
+
+Ns 0
+
+map_Ka Part207_diff.png
+map_Kd Part207_diff.png
+map_d Part207_diff.png
+
+newmtl Wedge30Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.666667 0.666667 0.666667 
+
+d 0.101961
+
+Ns 255
+
+map_Ka Wedge4_diff.png
+map_Kd Wedge4_diff.png
+map_d Wedge4_diff.png
+
+newmtl Part92Mtl
+Material Color
+Ka 0.103634 0.108711 0.14198
+Kd 0.103634 0.108711 0.14198
+Ks 0.00447049 0.0046895 0.00612464 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part105Mtl
+Material Color
+Ka 0.373615 0.368591 0.383775
+Kd 0.373615 0.368591 0.383775
+Ks 0.0439547 0.0433636 0.04515 
+
+d 1
+
+Ns 0
+
+map_Ka Part105_diff.png
+map_Kd Part105_diff.png
+map_d Part105_diff.png
+
+map_Bump Part105_nmap.png
+
+map_Ns Part105_spec.png
+
+newmtl Union27Mtl
+Material Color
+Ka 0.176774 0.242796 0.344026
+Kd 0.176774 0.242796 0.344026
+Ks 0.0159444 0.0218993 0.0310298 
+
+d 1
+
+Ns 0
+
+newmtl Part106Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.117647 0.117647 0.117647 
+
+d 0.603922
+
+Ns 0
+
+map_Ka Part106_diff.png
+map_Kd Part106_diff.png
+map_d Part106_diff.png
+
+newmtl Part192Mtl
+Material Color
+Ka 0.00715504 0.018913 0.0315514
+Kd 0.00715504 0.018913 0.0315514
+Ks 0.00477002 0.0126087 0.0210343 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Part111Mtl
+Material Color
+Ka 0.940601 0.932277 0.95737
+Kd 0.940601 0.932277 0.95737
+Ks 0.627067 0.621518 0.638246 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Part107Mtl
+Material Color
+Ka 0.00715504 0.018913 0.0315514
+Kd 0.00715504 0.018913 0.0315514
+Ks 0.000841769 0.00222506 0.00371193 
+
+d 1
+
+Ns 0
+
+map_Ka Part105_diff.png
+map_Kd Part105_diff.png
+map_d Part105_diff.png
+
+map_Bump Part105_nmap.png
+
+map_Ns Part105_spec.png
+
+newmtl Part208Mtl
+Material Color
+Ka 0.144972 0.151058 0.197516
+Kd 0.144972 0.151058 0.197516
+Ks 0.0062537 0.00651623 0.00852032 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part108Mtl
+Material Color
+Ka 0.293216 0.288816 0.297653
+Kd 0.293216 0.288816 0.297653
+Ks 0.0126485 0.0124587 0.0128399 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part112Mtl
+Material Color
+Ka 0.598942 0.605484 0.645555
+Kd 0.598942 0.605484 0.645555
+Ks 0.0258367 0.0261189 0.0278475 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part114Mtl
+Material Color
+Ka 0.124741 0.113921 0.121986
+Kd 0.124741 0.113921 0.121986
+Ks 0.024459 0.0223374 0.0239188 
+
+d 1
+
+Ns 255
+
+map_Bump Part91_nmap.png
+
+map_Ns Part91_spec.png
+
+newmtl Wedge27Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.666667 0.666667 0.666667 
+
+d 0.2
+
+Ns 255
+
+map_Ka Wedge4_diff.png
+map_Kd Wedge4_diff.png
+map_d Wedge4_diff.png
+
+newmtl Part115Mtl
+Material Color
+Ka 0.124741 0.113921 0.121986
+Kd 0.124741 0.113921 0.121986
+Ks 0.0831606 0.0759473 0.0813238 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Part120Mtl
+Material Color
+Ka 0.0780566 0.154152 0.0869013
+Kd 0.0780566 0.154152 0.0869013
+Ks 0.0520377 0.102768 0.0579342 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Part140Mtl
+Material Color
+Ka 0.373615 0.368591 0.383775
+Kd 0.373615 0.368591 0.383775
+Ks 0.0161167 0.0159 0.016555 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Union8Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.666667 0.666667 0.666667 
+
+d 0.152941
+
+Ns 255
+
+map_Ka Union7_diff.png
+map_Kd Union7_diff.png
+map_d Union7_diff.png
+
+newmtl Union11Mtl
+Material Color
+Ka 0.618686 0.618686 0.618686
+Kd 0.618686 0.618686 0.618686
+Ks 0.0897701 0.0897701 0.0897701 
+
+d 0.25098
+
+Ns 0
+
+map_Ka Union11_diff.png
+map_Kd Union11_diff.png
+map_d Union11_diff.png
+
+map_Bump Union11_nmap.png
+
+map_Ns Union11_spec.png
+
+newmtl Part186Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0392157 0.0392157 0.0392157 
+
+d 0.2
+
+Ns 0
+
+map_Ka Part186_diff.png
+map_Kd Part186_diff.png
+map_d Part186_diff.png
+
+newmtl Union13Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.666667 0.666667 0.666667 
+
+d 0.2
+
+Ns 255
+
+map_Ka Union7_diff.png
+map_Kd Union7_diff.png
+map_d Union7_diff.png
+
+newmtl Union17Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.666667 0.666667 0.666667 
+
+d 0.301961
+
+Ns 255
+
+map_Ka Union7_diff.png
+map_Kd Union7_diff.png
+map_d Union7_diff.png
+
+newmtl Union25Mtl
+Material Color
+Ka 0.00715504 0.018913 0.0315514
+Kd 0.00715504 0.018913 0.0315514
+Ks 0.000308649 0.000815854 0.00136104 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Wedge22Mtl
+Material Color
+Ka 0.0399472 0.0399472 0.0399472
+Kd 0.0399472 0.0399472 0.0399472
+Ks 0.0266314 0.0266314 0.0266314 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Part189Mtl
+Material Color
+Ka 0.0915184 0.0511221 0.0328759
+Kd 0.0915184 0.0511221 0.0328759
+Ks 0.00502454 0.0028067 0.00180495 
+
+d 1
+
+Ns 0
+
+map_Ka Part189_diff.png
+map_Kd Part189_diff.png
+map_d Part189_diff.png
+
+map_Bump Part189_nmap.png
+
+map_Ns Part189_spec.png
+
+newmtl Part190Mtl
+Material Color
+Ka 0.042987 0.116576 0.193972
+Kd 0.042987 0.116576 0.193972
+Ks 0.00387726 0.0105147 0.0174955 
+
+d 1
+
+Ns 0
+
+newmtl Wedge38Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.666667 0.666667 0.666667 
+
+d 0.301961
+
+Ns 255
+
+map_Ka Wedge4_diff.png
+map_Kd Wedge4_diff.png
+map_d Wedge4_diff.png
+
+newmtl Part195Mtl
+Material Color
+Ka 0.00715504 0.018913 0.0315514
+Kd 0.00715504 0.018913 0.0315514
+Ks 0.00715504 0.018913 0.0315514 
+
+d 1
+
+Ns 0
+
+map_Ka Union2_diff.png
+map_Kd Union2_diff.png
+map_d Union2_diff.png
+
+map_Bump Union2_nmap.png
+
+map_Ns Union2_spec.png
+
+newmtl Union20Mtl
+Material Color
+Ka 0.00455975 0.0118813 0.0199178
+Kd 0.00455975 0.0118813 0.0199178
+Ks 0.000411272 0.00107165 0.00179651 
+
+d 1
+
+Ns 0
+
+newmtl Part191Mtl
+Material Color
+Ka 0.00715504 0.018913 0.0315514
+Kd 0.00715504 0.018913 0.0315514
+Ks 0.00140295 0.00370843 0.00618655 
+
+d 1
+
+Ns 255
+
+map_Bump Part91_nmap.png
+
+map_Ns Part91_spec.png
+
+newmtl Union28Mtl
+Material Color
+Ka 0.0231036 0.0619075 0.103634
+Kd 0.0231036 0.0619075 0.103634
+Ks 0.0231036 0.0619075 0.103634 
+
+d 1
+
+Ns 0
+
+map_Ka Union2_diff.png
+map_Kd Union2_diff.png
+map_d Union2_diff.png
+
+map_Bump Union2_nmap.png
+
+map_Ns Union2_spec.png
+
+newmtl Union29Mtl
+Material Color
+Ka 0.618686 0.618686 0.618686
+Kd 0.618686 0.618686 0.618686
+Ks 0.618686 0.618686 0.618686 
+
+d 1
+
+Ns 0
+
+map_Ka Union2_diff.png
+map_Kd Union2_diff.png
+map_d Union2_diff.png
+
+map_Bump Union2_nmap.png
+
+map_Ns Union2_spec.png
+
+newmtl Wedge24Mtl
+Material Color
+Ka 0.789314 0.789314 0.789314
+Kd 0.789314 0.789314 0.789314
+Ks 0.526209 0.526209 0.526209 
+
+d 1
+
+Ns 255
+
+map_Ka Union1_diff.png
+map_Kd Union1_diff.png
+map_d Union1_diff.png
+
+map_Bump Union1_nmap.png
+
+map_Ns Union1_spec.png
+
+newmtl Part206Mtl
+Material Color
+Ka 0.108711 0.113921 0.151058
+Kd 0.108711 0.113921 0.151058
+Ks 0.0046895 0.00491424 0.00651623 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part210Mtl
+Material Color
+Ka 0.119264 0.124741 0.163641
+Kd 0.119264 0.124741 0.163641
+Ks 0.00514472 0.00538098 0.00705901 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part207Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.152941
+
+Ns 0
+
+map_Ka Part207_diff.png
+map_Kd Part207_diff.png
+map_d Part207_diff.png
+
+newmtl Part211Mtl
+Material Color
+Ka 0.130352 0.136099 0.180144
+Kd 0.130352 0.136099 0.180144
+Ks 0.00562304 0.00587092 0.00777093 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part212Mtl
+Material Color
+Ka 0.0563741 0.0600316 0.0780566
+Kd 0.0563741 0.0600316 0.0780566
+Ks 0.00243182 0.0025896 0.00336715 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part215Mtl
+Material Color
+Ka 0.154152 0.160444 0.212044
+Kd 0.154152 0.160444 0.212044
+Ks 0.00664971 0.00692109 0.00914701 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part216Mtl
+Material Color
+Ka 0.0581872 0.0619075 0.0802193
+Kd 0.0581872 0.0619075 0.0802193
+Ks 0.00251004 0.00267052 0.00346044 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part219Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.101961
+
+Ns 0
+
+map_Ka Part13_diff.png
+map_Kd Part13_diff.png
+map_d Part13_diff.png
+
+newmtl Part222Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.701961
+
+Ns 0
+
+map_Ka Part13_diff.png
+map_Kd Part13_diff.png
+map_d Part13_diff.png
+
+newmtl Part223Mtl
+Material Color
+Ka 0.180144 0.186989 0.2468
+Kd 0.180144 0.186989 0.2468
+Ks 0.00777093 0.00806617 0.0106463 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part224Mtl
+Material Color
+Ka 0.0717615 0.0759261 0.101145
+Kd 0.0717615 0.0759261 0.101145
+Ks 0.00309559 0.00327524 0.00436312 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part226Mtl
+Material Color
+Ka 0.163641 0.173439 0.22331
+Kd 0.163641 0.173439 0.22331
+Ks 0.00705901 0.00748168 0.009633 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part227Mtl
+Material Color
+Ka 0.197516 0.20836 0.271577
+Kd 0.197516 0.20836 0.271577
+Ks 0.00852032 0.00898806 0.0117151 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part232Mtl
+Material Color
+Ka 0.101145 0.106156 0.139022
+Kd 0.101145 0.106156 0.139022
+Ks 0.00436312 0.00457928 0.00599705 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part237Mtl
+Material Color
+Ka 0.130352 0.136099 0.176774
+Kd 0.130352 0.136099 0.176774
+Ks 0.00562304 0.00587092 0.00762556 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part240Mtl
+Material Color
+Ka 0.111299 0.116576 0.154152
+Kd 0.111299 0.116576 0.154152
+Ks 0.00480115 0.00502876 0.00664971 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part242Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.2
+
+Ns 0
+
+map_Ka Part207_diff.png
+map_Kd Part207_diff.png
+map_d Part207_diff.png
+
+newmtl Part246Mtl
+Material Color
+Ka 0.0869013 0.0891935 0.119264
+Kd 0.0869013 0.0891935 0.119264
+Ks 0.00374868 0.00384756 0.00514472 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+
+newmtl Part247Mtl
+Material Color
+Ka 0.121986 0.12753 0.166872
+Kd 0.121986 0.12753 0.166872
+Ks 0.00526213 0.00550128 0.00719841 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge1_diff.png
+map_Kd Wedge1_diff.png
+map_d Wedge1_diff.png
+
+map_Bump Wedge1_nmap.png
+
+map_Ns Wedge1_spec.png
+

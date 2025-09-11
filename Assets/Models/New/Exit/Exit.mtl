@@ -1,0 +1,46 @@
+newmtl Part1Mtl
+Material Color
+Ka 0.154152 0.160444 0.212044
+Kd 0.154152 0.160444 0.212044
+Ks 0.00664971 0.00692109 0.00914701 
+
+d 1
+
+Ns 0
+
+map_Ka Part1_diff.png
+map_Kd Part1_diff.png
+map_d Part1_diff.png
+
+map_Bump Part1_nmap.png
+
+map_Ns Part1_spec.png
+
+newmtl Part2Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.4
+
+Ns 0
+
+map_Ka Part2_diff.png
+map_Kd Part2_diff.png
+map_d Part2_diff.png
+
+newmtl Part4Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0431373 0.0431373 0.0431373 
+
+d 0.4
+
+Ns 0
+
+map_Ka Part4_diff.png
+map_Kd Part4_diff.png
+map_d Part4_diff.png
+
