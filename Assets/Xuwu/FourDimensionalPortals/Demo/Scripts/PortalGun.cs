@@ -8,7 +8,7 @@ using UnityEngine.Serialization;
 
 namespace Xuwu.FourDimensionalPortals.Demo
 {
-    public class PortalGun : MonoBehaviour
+    public class PortalGun : Singleton<PortalGun>
     {
         [SerializeField] private LayerMask _layerMask = 1 << 4;
         [SerializeField] private Portal _yellowPortal;
@@ -17,7 +17,7 @@ namespace Xuwu.FourDimensionalPortals.Demo
         [SerializeField] private ParticleSystem effectSpawnPortal;
         [SerializeField] private ParticleSystem effectCloseAllPortal;
         [SerializeField] private Animator animatorGun;
-        private const float MaxGrabDistance = 3.5f;
+        public float MaxGrabDistance = 3.5f;
 
         private const int HitResultsBudget = 16;
         private static readonly Collider[] s_colliderResultsBuffer = new Collider[HitResultsBudget];
@@ -131,7 +131,10 @@ namespace Xuwu.FourDimensionalPortals.Demo
             aimUi.ActiveOrangePortal(true);
             aimUi.ActivebluetPortal(true);
         }
-
+        public void GrabOff()   
+        {
+            _grabbedRigidbody = null;
+        }
         private void FixedUpdate()
         {
             if (!_grabbedRigidbody)
@@ -207,13 +210,24 @@ namespace Xuwu.FourDimensionalPortals.Demo
                 targetRigidbody = rigidbodyGhost.SourceRigidbody;
             }
 
+            // Проверяем расстояние до захваченного объекта для стабильности
+            float distanceToGrabbed = Vector3.Distance(origin, _grabbedRigidbody.position);
+            
             if (targetRigidbody == _grabbedRigidbody)
             {
                 _grabbedRigidbody.velocity = (targetPosition - _grabbedRigidbody.position) / Time.fixedDeltaTime;
                 _grabbedRigidbody.angularVelocity = Vector3.zero;
             }
+            else if (distanceToGrabbed <= MaxGrabDistance * 2f) // Увеличиваем tolerance для стабильности
+            {
+                // Если raycast не попал в объект, но он все еще в пределах разумного расстояния,
+                // продолжаем удерживать его на предыдущей позиции
+                _grabbedRigidbody.velocity = (targetPosition - _grabbedRigidbody.position) / Time.fixedDeltaTime;
+                _grabbedRigidbody.angularVelocity = Vector3.zero;
+            }
             else
             {
+                // Отпускаем только если объект действительно слишком далеко
                 _grabbedRigidbody.velocity = Vector3.zero;
                 _grabbedRigidbody.angularVelocity = Vector3.zero;
                 _grabbedRigidbody = null;
@@ -359,7 +373,7 @@ namespace Xuwu.FourDimensionalPortals.Demo
             if (((1 << hit.collider.gameObject.layer) & _layerMask) == 0)
                 return false;
 
-            var zOffset = hit.collider.contactOffset + .01f;
+            var zOffset = hit.collider.contactOffset + .1f;
             var targetPosition = hit.point + hit.normal * zOffset;
 
             var targetUp = PlayerController.WorldUp;
@@ -435,8 +449,10 @@ namespace Xuwu.FourDimensionalPortals.Demo
 
         private void Grab()
         {
+            Debug.Log("DEBUG: Функция Grab() вызвана!");
             if (_grabbedRigidbody)
             {
+                Debug.Log("DEBUG: ОТПУСКАЕМ объект: " + _grabbedRigidbody.name);
                 _grabbedRigidbody = null;
                 return;
             }

@@ -21,6 +21,7 @@ public class ZoneUpdatePortal : MonoBehaviour
     {
         if (other.GetComponent<Box>())
         {
+            PortalGun.Instance.GrabOff();
             other.GetComponent<Box>().RestartBox();
         }
 

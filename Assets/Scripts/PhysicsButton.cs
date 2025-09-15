@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class PhysicsButton : MonoBehaviour
-{
+{   
+    public GameObject parentLine;
     public Rigidbody buttonTopRigid;
     public Transform buttonTop;
     public Transform buttonLowerLimit;
@@ -25,7 +26,8 @@ public class PhysicsButton : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        lineRenderer = parentLine.GetComponentInChildren<LineRenderer>();
         door = GetComponentInParent<Door>();
         if (door)
         {

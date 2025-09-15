@@ -365,7 +365,7 @@ PrefabInstance:
         type: 3}
       propertyPath: lineRenderer
       value: 
-      objectReference: {fileID: 7826278850755008994}
+      objectReference: {fileID: 8884521696466882498}
     - target: {fileID: 5752792369912232192, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
         type: 3}
       propertyPath: pressedSound
@@ -583,12 +583,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 719295269579616597}
   m_PrefabAsset: {fileID: 0}
---- !u!120 &7826278850755008994 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 7307077315816515767, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 719295269579616597}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8188443588203708784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8671752772986368037, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
@@ -622,6 +616,12 @@ Transform:
 --- !u!4 &8622371210267494105 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9102799394761471884, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 719295269579616597}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &8884521696466882498 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 8266174965179596439, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
     type: 3}
   m_PrefabInstance: {fileID: 719295269579616597}
   m_PrefabAsset: {fileID: 0}
@@ -726,7 +726,7 @@ PrefabInstance:
         type: 3}
       propertyPath: lineRenderer
       value: 
-      objectReference: {fileID: 7826278850755008994}
+      objectReference: {fileID: 7368066754271132671}
     - target: {fileID: 4685313577788364179, guid: 688ee33d17ad9a347b0ab4600704da1b,
         type: 3}
       propertyPath: m_RootOrder
@@ -805,6 +805,12 @@ PrefabInstance:
 --- !u!1 &2703537454961350488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1403671273748820541, guid: 688ee33d17ad9a347b0ab4600704da1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3962661260592981349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &7368066754271132671 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 5818249152062725786, guid: 688ee33d17ad9a347b0ab4600704da1b,
     type: 3}
   m_PrefabInstance: {fileID: 3962661260592981349}
   m_PrefabAsset: {fileID: 0}
