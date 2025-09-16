@@ -29,6 +29,7 @@ namespace Xuwu.FourDimensionalPortals.Demo
     public class PlayerController : PortalTraveler
     {
         [SerializeField] private Animator _animator;
+        [SerializeField] private Animator _animatorGun;
         [SerializeField] private Transform _rotationHandle;
         [SerializeField] private Transform _cameraFollowTarget;
         [SerializeField] private PortalSystemAdditionalCameraData _portalSystemCameraData;
@@ -350,6 +351,14 @@ namespace Xuwu.FourDimensionalPortals.Demo
 
             _animator.SetBool("Grounded", isGrounded);
             _animator.SetFloat("MoveMag", _smoothMoveInput.magnitude);
+            if(_smoothMoveInput.magnitude > 0.1f)
+            {
+                _animatorGun.SetInteger("Stay", 1);
+            }
+            else
+            {
+                _animatorGun.SetInteger("Stay", 0);
+            }
             _isJump = false;
         }
 

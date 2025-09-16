@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using YG;
-using Portal_Git.Assets.Scripts.StartMenu;
 
 public class StartMenuManager : MonoBehaviour
 {

@@ -2,8 +2,7 @@ using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
-namespace Portal_Git.Assets.Scripts.StartMenu
-{
+
     public class ButtonLevel : MonoBehaviour
     {
         [SerializeField] private Button currentButton;
@@ -51,6 +50,7 @@ namespace Portal_Git.Assets.Scripts.StartMenu
             {
                 YG2.saves.currentLevel = level;
                 YG2.SaveProgress();
+                LevelGridManager.Instance.UpdateAllButtons();
                 Debug.Log($"Выбран уровень {level}");
             }
             else
@@ -60,4 +60,3 @@ namespace Portal_Git.Assets.Scripts.StartMenu
         }
 
     }
-}

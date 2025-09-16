@@ -3,9 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using YG;
 
-namespace Portal_Git.Assets.Scripts.StartMenu
-{
-    public class LevelGridManager : MonoBehaviour
+
+    public class LevelGridManager : Singleton<LevelGridManager>
     {
         [Header("Настройки сетки")]
         [SerializeField] private ButtonLevel buttonLevelPrefab; // Префаб кнопки уровня
@@ -99,5 +98,5 @@ namespace Portal_Git.Assets.Scripts.StartMenu
                 button.UpdateButtonState();
             }
         }
-    }
+    
 }

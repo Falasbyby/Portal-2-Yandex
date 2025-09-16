@@ -3502,7 +3502,6 @@ MonoBehaviour:
     type: 3}
   gridParent: {fileID: 1795009662}
   totalLevels: 37
-  columnsPerRow: 6
   startGameButton: {fileID: 1273309824}
 --- !u!224 &1584571748
 RectTransform:

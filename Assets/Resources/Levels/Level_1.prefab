@@ -3235,6 +3235,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6536449203104825941, guid: ca4b32a8726e2a041827289b6a993385,
+        type: 3}
+      propertyPath: _skinnedMeshRenderers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
