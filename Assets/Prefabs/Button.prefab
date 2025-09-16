@@ -75,7 +75,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4537782699052078472}
   - component: {fileID: 4537782699052078475}
-  - component: {fileID: 4537782699052078474}
   - component: {fileID: 8081574725022373943}
   - component: {fileID: 682073583389015780}
   m_Layer: 0
@@ -116,39 +115,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1.1511828, z: 1}
-  m_Center: {x: 0, y: 0.07559224, z: 0}
---- !u!54 &4537782699052078474
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4537782699052078519}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Center: {x: 0, y: 0.43, z: 0}
 --- !u!82 &8081574725022373943
 AudioSource:
   m_ObjectHideFlags: 0
@@ -258,14 +230,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentLine: {fileID: 3886264616272165271}
-  buttonTopRigid: {fileID: 4537782700659208608}
   buttonTop: {fileID: 4537782700659208623}
   buttonLowerLimit: {fileID: 4537782698809898945}
   buttonUpperLimit: {fileID: 4537782700732266706}
-  threshHold: 0.5
-  force: 10
+  moveSpeed: 5
   isPressed: 0
-  CollidersToIgnore: []
   onPressed:
     m_PersistentCalls:
       m_Calls: []
@@ -400,7 +369,6 @@ GameObject:
   - component: {fileID: 4537782700659208611}
   - component: {fileID: 4537782700659208610}
   - component: {fileID: 4537782700659208609}
-  - component: {fileID: 4537782700659208608}
   m_Layer: 0
   m_Name: TopButton
   m_TagString: Untagged
@@ -495,33 +463,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3806868, y: 1, z: 1.460882}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &4537782700659208608
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4537782700659208622}
-  serializedVersion: 4
-  m_Mass: 0.001
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!1 &4537782700732266705
 GameObject:
   m_ObjectHideFlags: 0

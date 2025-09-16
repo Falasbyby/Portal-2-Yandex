@@ -5,7 +5,7 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     [SerializeField] private ParticleSystem effect;
-
+    public bool grab = false;
     private Vector3 startPos;
     void Start()
     {
@@ -22,4 +22,9 @@ public class Box : MonoBehaviour
       
 
     }
+    public void GrabBox(bool grab)
+    {
+        this.grab = grab;
+    }
+    
 }

@@ -18,7 +18,7 @@ public class UiGame : Singleton<UiGame>
     [SerializeField] private Button complitedButton;
     [SerializeField] private CanvasGroup levelNextContainer;
     [SerializeField] private Button nextLevelButton;
-    
+
     public bool isGameActive = false;
     public float timerRun;
 
@@ -26,7 +26,7 @@ public class UiGame : Singleton<UiGame>
     {
         complitedButton.onClick.AddListener(ComplitedGame);
         startButton.onClick.AddListener(StartGame);
-        timerRun = PlayerPrefs.GetFloat("TimerLider", 0);
+        timerRun = YG2.saves.timerLider;
         string formattedTime = FormatTime(timerRun);
 
         nextLevelButton.onClick.AddListener(NextLevel);
@@ -96,7 +96,7 @@ public class UiGame : Singleton<UiGame>
 
         isGameActive = false;
         Fade.Instance.ActiveFade(true, 1);
-        //   PlayerPrefs.SetFloat("TimerLider",timerRun);
+        //   YG2.saves.timerLider = timerRun;
     }
 
     private void ActiveCursore(bool active)
@@ -113,36 +113,18 @@ public class UiGame : Singleton<UiGame>
 
 
         isGameActive = false;
-        PlayerPrefs.SetFloat("TimerLider", timerRun);
+        YG2.saves.timerLider = timerRun;
         if (LevelController.Instance.maxLevel)
         {
-            PlayerPrefs.SetFloat("TimerLider", timerRun);
-            maxTimerRecord.text = FormatTime(PlayerPrefs.GetFloat("MaxTimerLider", 0));
-            ActiveCursore(true);
-            if (timerRun < PlayerPrefs.GetFloat("MaxTimerLider", 0) || PlayerPrefs.GetFloat("MaxTimerLider", 0) ==0)
-            {
-                PlayerPrefs.SetFloat("MaxTimerLider", timerRun);
-              //  YandexGame.NewLBScoreTimeConvert("TimerLider1", timerRun);
-                Debug.Log("addLider");
-            }
+            Fade.Instance.ActiveFade(true,0);
 
-            timerRecord.text = FormatTime(timerRun);
-           
-
-            //   Fade.Instance.ActiveFade(true,0);
-
-            finishContainer.DOFade(1, 0.3f);
-            finishContainer.blocksRaycasts = true;
-
-
-            PlayerPrefs.SetInt("CurrentLevel", 0);
-            PlayerPrefs.SetFloat("TimerLider", 0);
         }
         else
         {
             levelNextContainer.alpha = 1;
             levelNextContainer.blocksRaycasts = true;
             ActiveCursore(true);
+            YG2.SaveProgress();
         }
     }
 }

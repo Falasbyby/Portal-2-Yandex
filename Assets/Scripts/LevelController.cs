@@ -13,12 +13,14 @@ public class LevelController : Singleton<LevelController>
     public bool maxLevel;
     private void Start()
     {
-        currentLevelIndex = PlayerPrefs.GetInt("CurrentLevel", 0);
-
-       
+        // Проверяем, что выбранный уровень не превышает максимальный открытый уровень
+        if (YG2.saves.currentLevel > YG2.saves.maxOpenLevel)
+        {
+            YG2.saves.currentLevel = YG2.saves.maxOpenLevel;
+        }
         
-        int LevelMax = currentLevelIndex;
-      
+        currentLevelIndex = YG2.saves.currentLevel;
+        
         int maxLevelIndex = countLevels.Length - 1;
         if (currentLevelIndex >= maxLevelIndex)
         {
@@ -26,11 +28,7 @@ public class LevelController : Singleton<LevelController>
             maxLevel = true;
         }
         
-       
-       // Instantiate(levels[currentLevelIndex], transform);
-      // levels[currentLevelIndex].gameObject.SetActive(true);
         InstantiateLevelFromResources();
-      //  YandexGame.FullscreenShow();
     }
 
     private void Update()
@@ -43,10 +41,32 @@ public class LevelController : Singleton<LevelController>
 
     public void NextLevel()
     {
-      
         currentLevelIndex++;
-        PlayerPrefs.SetInt("CurrentLevel", currentLevelIndex);
+        YG2.saves.currentLevel = currentLevelIndex;
+        
+        // Обновляем максимальный открытый уровень, если текущий уровень больше
+        if (currentLevelIndex > YG2.saves.maxOpenLevel)
+        {
+            YG2.saves.maxOpenLevel = currentLevelIndex;
+        }
+        
+        YG2.SaveProgress();
         YG2.InterstitialAdvShow();
+    }
+    
+    // Метод для выбора уровня из меню
+    public void SelectLevel(int levelIndex)
+    {
+        // Проверяем, что выбранный уровень не превышает максимальный открытый уровень
+        if (levelIndex <= YG2.saves.maxOpenLevel)
+        {
+            YG2.saves.currentLevel = levelIndex;
+            YG2.SaveProgress();
+        }
+        else
+        {
+            Debug.LogWarning($"Уровень {levelIndex} еще не открыт! Максимальный открытый уровень: {YG2.saves.maxOpenLevel}");
+        }
     }
     private void InstantiateLevelFromResources()
     {

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using YG;
 
 namespace Xuwu.FourDimensionalPortals.Demo
 {
@@ -99,7 +100,7 @@ namespace Xuwu.FourDimensionalPortals.Demo
         public void UpdateSensitivity()
         {
             // Устанавливаем более разумную чувствительность по умолчанию
-            sensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 100f)*1000;
+            sensitivity = YG2.saves.sensitivity * 1000;
         }
 
         public void OnSwitchView(InputValue value)

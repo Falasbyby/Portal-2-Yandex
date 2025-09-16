@@ -6,23 +6,21 @@ using UnityEngine.Events;
 public class PhysicsButton : MonoBehaviour
 {   
     public GameObject parentLine;
-    public Rigidbody buttonTopRigid;
     public Transform buttonTop;
     public Transform buttonLowerLimit;
     public Transform buttonUpperLimit;
-    public float threshHold;
-    public float force = 10;
-    private float upperLowerDiff;
+    public float moveSpeed = 5f;
     public bool isPressed;
     private bool prevPressedState;
     private AudioSource pressedSound;
-    public Collider[] CollidersToIgnore;
     public UnityEvent onPressed;
     public UnityEvent onReleased;
 
     public LineRenderer lineRenderer;
 
     private Door door;
+    private bool hasBoxOnButton = false;
+    private Box boxOnButton;
 
     // Start is called before the first frame update
     void Start()
@@ -38,59 +36,42 @@ public class PhysicsButton : MonoBehaviour
             lineRenderer.endColor = Color.red;
         }
         pressedSound = GetComponent<AudioSource>();
-        Collider localCollider = GetComponent<Collider>();
-        if (localCollider != null)
-        {
-            Physics.IgnoreCollision(localCollider, buttonTop.GetComponentInChildren<Collider>());
-
-            foreach (Collider singleCollider in CollidersToIgnore)
-            {
-                Physics.IgnoreCollision(localCollider, singleCollider);
-            }
-        }
         
-        if (transform.eulerAngles != Vector3.zero){
-            Vector3 savedAngle = transform.eulerAngles;
-            transform.eulerAngles = Vector3.zero;
-            upperLowerDiff = buttonUpperLimit.position.y - buttonLowerLimit.position.y;
-            transform.eulerAngles = savedAngle;
-        }
-        else
-            upperLowerDiff = buttonUpperLimit.position.y - buttonLowerLimit.position.y;
+        // Устанавливаем начальную позицию кнопки
+        buttonTop.position = buttonUpperLimit.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        buttonTop.transform.localPosition = new Vector3(0, buttonTop.transform.localPosition.y, 0);
-        buttonTop.transform.localEulerAngles = new Vector3(0, 0, 0);
-        if (buttonTop.localPosition.y >= 0)
-            buttonTop.transform.position = new Vector3(buttonUpperLimit.position.x, buttonUpperLimit.position.y, buttonUpperLimit.position.z);
+        // Определяем целевую позицию кнопки
+        Vector3 targetPosition;
+        bool shouldBePressed = false;
+        
+        // Если есть куб на кнопке и он не взят - кнопка нажата
+        if (hasBoxOnButton && boxOnButton != null && !boxOnButton.grab)
+        {
+            targetPosition = buttonLowerLimit.position;
+            shouldBePressed = true;
+        }
         else
-            buttonTopRigid.AddForce(buttonTop.transform.up * force * Time.deltaTime);
+        {
+            targetPosition = buttonUpperLimit.position;
+            shouldBePressed = false;
+        }
+        
+        // Плавно перемещаем кнопку к целевой позиции
+        buttonTop.position = Vector3.Lerp(buttonTop.position, targetPosition, moveSpeed * Time.deltaTime);
+        
+        // Проверяем состояние нажатия
+        isPressed = shouldBePressed;
 
-        if (buttonTop.localPosition.y <= buttonLowerLimit.localPosition.y)
-            buttonTop.transform.position = new Vector3(buttonLowerLimit.position.x, buttonLowerLimit.position.y, buttonLowerLimit.position.z);
-
-
-        if (Vector3.Distance(buttonTop.position, buttonLowerLimit.position) < upperLowerDiff * threshHold)
-            isPressed = true;
-        else
-            isPressed = false;
-
+        // Вызываем события при изменении состояния
         if(isPressed && prevPressedState != isPressed)
             Pressed();
         if(!isPressed && prevPressedState != isPressed)
             Released();
     }
-
-    // void FixedUpdate(){
-    //     Vector3 localVelocity = transform.InverseTransformDirection(buttonTop.GetComponent<Rigidbody>().velocity);
-    //     Rigidbody rb = buttonTop.GetComponent<Rigidbody>();
-    //     localVelocity.x = 0;
-    //     localVelocity.z = 0;
-    //     rb.velocity = transform.TransformDirection(localVelocity);
-    // }
 
     void Pressed(){
         prevPressedState = isPressed;
@@ -107,5 +88,27 @@ public class PhysicsButton : MonoBehaviour
         onReleased.Invoke();
         lineRenderer.startColor = Color.red;
         lineRenderer.endColor = Color.red;
+    }
+    
+    // Обнаружение входа куба в триггер
+    void OnTriggerStay(Collider other)
+    {
+        Box box = other.GetComponent<Box>();
+        if (box != null && !box.grab)
+        {
+            hasBoxOnButton = true;
+            boxOnButton = box;
+        }
+    }
+    
+    // Обнаружение выхода куба из триггера
+    void OnTriggerExit(Collider other)
+    {
+        Box box = other.GetComponent<Box>();
+        if (box != null && box == boxOnButton )
+        {
+            hasBoxOnButton = false;
+            boxOnButton = null;
+        }
     }
 }

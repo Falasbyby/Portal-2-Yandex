@@ -19,8 +19,7 @@ public class MenuGame : Singleton<MenuGame>
     [SerializeField] private Color32[] aimColors;
     [SerializeField] private Scrollbar sliderSensitive;
     [SerializeField] private CanvasGroup aimContainer;
-    private const string PlayerPrefsKeyMouse = "MouseSensitivity";
-    private const string PlayerPrefsKeyName = "PlayerName";
+    // Удалены константы PlayerPrefs - теперь используется YG2.saves
     private int selectedAimIndex = 0;
     private CanvasGroup currentContainerActive;
 
@@ -39,11 +38,11 @@ public class MenuGame : Singleton<MenuGame>
         optionsButton.onClick.AddListener(delegate { ActiveContainer(optionsContainer); });
         backButton.onClick.AddListener(OpenCurrentContainer);
         restartButton.onClick.AddListener(UiGame.Instance.LoseActiveContainer);
-        string savedName = PlayerPrefs.GetString(PlayerPrefsKeyName, "123");
+        string savedName = string.IsNullOrEmpty(YG2.saves.playerName) ? "123" : YG2.saves.playerName;
       
 
-        // Загружаем значение чувствительности из PlayerPrefs и устанавливаем его для слайдера
-        float savedSensitivity = PlayerPrefs.GetFloat(PlayerPrefsKeyMouse, 0.2f);
+        // Загружаем значение чувствительности из YG2.saves и устанавливаем его для слайдера
+        float savedSensitivity = YG2.saves.sensitivity == 0 ? 0.2f : YG2.saves.sensitivity;
         sliderSensitive.value = savedSensitivity;
 
         // Добавляем обработчик события для автосохранения чувствительности
@@ -51,7 +50,7 @@ public class MenuGame : Singleton<MenuGame>
         menuButton.onClick.AddListener(MenyActive);
 
         TogglesAimActive();
-        aimIcon.color = aimColors[PlayerPrefs.GetInt("ColorAim", 0)];
+        aimIcon.color = aimColors[YG2.saves.colorAim];
         
         
       
@@ -116,17 +115,17 @@ public class MenuGame : Singleton<MenuGame>
 
     private void SaveSensitivity(float sensitivity)
     {
-        // Сохраняем значение чувствительности в PlayerPrefs
-        PlayerPrefs.SetFloat(PlayerPrefsKeyMouse, sensitivity);
-        PlayerPrefs.Save();
+        // Сохраняем значение чувствительности в YG2.saves
+        YG2.saves.sensitivity = sensitivity;
+        YG2.SaveProgress();
         player.UpdateSensitivity();
     }
 
     private void SaveName(string inputText)
     {
-        // Сохраняем введенный текст в PlayerPrefs
-        PlayerPrefs.SetString(PlayerPrefsKeyName, inputText);
-        PlayerPrefs.Save();
+        // Сохраняем введенный текст в YG2.saves
+        YG2.saves.playerName = inputText;
+        YG2.SaveProgress();
     }
 
     public void ActiveContainer(CanvasGroup canvasGroup)
@@ -147,7 +146,7 @@ public class MenuGame : Singleton<MenuGame>
             int index = i; // Скопируем индекс для замыкания
 
             // Установите начальное значение только для тогла с индексом 0
-            if (i == PlayerPrefs.GetInt("ColorAim", 0))
+            if (i == YG2.saves.colorAim)
             {
                 togglesColorsAim[i].isOn = true;
             }
@@ -172,9 +171,9 @@ public class MenuGame : Singleton<MenuGame>
             // Обновляем выбранный индекс
             selectedAimIndex = index;
             aimIcon.color = aimColors[index];
-            // Сохраняем выбранный индекс в PlayerPrefs
-            PlayerPrefs.SetInt("ColorAim", selectedAimIndex);
-            PlayerPrefs.Save();
+            // Сохраняем выбранный индекс в YG2.saves
+            YG2.saves.colorAim = selectedAimIndex;
+            YG2.SaveProgress();
         }
     }
 }

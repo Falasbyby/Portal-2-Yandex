@@ -135,6 +135,12 @@ namespace Xuwu.FourDimensionalPortals.Demo
         }
         public void GrabOff()   
         {
+            // Устанавливаем grab = false для Box при принудительном отпускании
+            if (_grabbedRigidbody != null && _grabbedRigidbody.TryGetComponent(out Box box))
+            {
+                box.GrabBox(false);
+            }
+            
             _grabbedRigidbody = null;
             // Скрываем GrabInfo при принудительном отпускании объекта
             if (GrabInfo.Instance != null)
@@ -454,10 +460,16 @@ namespace Xuwu.FourDimensionalPortals.Demo
 
         private void Grab()
         {
-            Debug.Log("DEBUG: Функция Grab() вызвана!");
+         
             if (_grabbedRigidbody)
             {
-                Debug.Log("DEBUG: ОТПУСКАЕМ объект: " + _grabbedRigidbody.name);
+               
+                // Устанавливаем grab = false для Box при отпускании
+                if (_grabbedRigidbody.TryGetComponent(out Box box))
+                {
+                    box.GrabBox(false);
+                }
+                
                 _grabbedRigidbody = null;
                 // Скрываем GrabInfo при отпускании объекта
                 if (GrabInfo.Instance != null)
@@ -533,6 +545,12 @@ namespace Xuwu.FourDimensionalPortals.Demo
                     _grabbedRigidbody = rigidbodyGhost.SourceRigidbody;
                 else
                     _grabbedRigidbody = targetRigidbody;
+                
+                // Устанавливаем grab = true для Box при захвате
+                if (_grabbedRigidbody.TryGetComponent(out Box box))
+                {
+                    box.GrabBox(true);
+                }
                 
                 // Скрываем GrabInfo при успешном захвате объекта
                 if (GrabInfo.Instance != null)

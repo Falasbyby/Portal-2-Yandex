@@ -260,7 +260,7 @@ MonoBehaviour:
     labelAdvSimLabel: 0
   Storage:
     saveLocal: 1
-    saveCloud: 0
+    saveCloud: 1
     flush: 0
   Basic:
     platform: {fileID: 11400000, guid: c2a303d33a9fd394bae4c4b88b9a1c44, type: 2}

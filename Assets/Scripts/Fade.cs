@@ -25,7 +25,6 @@ public class Fade : Singleton<Fade>
 
     public void ActiveFade(bool active,int level)
     {
-        Debug.Log(active + "_fade");
         outline.color = color32Outline[1];
         transform.DOScale(active ? 2 : 0, 0.7f).SetEase(Ease.Linear).OnComplete(() =>
         {
