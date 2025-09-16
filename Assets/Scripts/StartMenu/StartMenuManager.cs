@@ -20,7 +20,6 @@ public class StartMenuManager : MonoBehaviour
     [SerializeField] private Scrollbar sliderSensitive;
     [SerializeField] private Button closeLoadContainer;
     [SerializeField] private Image barLoad;
-    [SerializeField] private LeaderboardYG leaderboardYg;
     private const string PlayerPrefsKeyMouse = "MouseSensitivity";
    
     private CanvasGroup currentContainerActive;

@@ -9,6 +9,7 @@ public class TutorOne : MonoBehaviour
     [SerializeField] private Animator animatorDoor;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip[] audioClip;
+    
     private bool trigger = false;
     public float firstTimer = 3;
     public float nextTimer;
@@ -22,7 +23,7 @@ public class TutorOne : MonoBehaviour
     {
        
 
-        if (YandexGame.EnvironmentData.language == "ru")
+        if (YG2.lang == "ru")
         {
             yield return new WaitForSeconds(firstTimer);
             audioSource.clip = audioClip[0];
@@ -41,7 +42,7 @@ public class TutorOne : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!trigger && YandexGame.EnvironmentData.language == "ru")
+        if (!trigger && YG2.lang == "ru")
         {
             trigger = true;
             audioSource.clip = audioClip[1];

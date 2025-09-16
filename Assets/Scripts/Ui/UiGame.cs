@@ -122,7 +122,7 @@ public class UiGame : Singleton<UiGame>
             if (timerRun < PlayerPrefs.GetFloat("MaxTimerLider", 0) || PlayerPrefs.GetFloat("MaxTimerLider", 0) ==0)
             {
                 PlayerPrefs.SetFloat("MaxTimerLider", timerRun);
-                YandexGame.NewLBScoreTimeConvert("TimerLider1", timerRun);
+              //  YandexGame.NewLBScoreTimeConvert("TimerLider1", timerRun);
                 Debug.Log("addLider");
             }
 

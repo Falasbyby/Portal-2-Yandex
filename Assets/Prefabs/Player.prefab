@@ -1342,6 +1342,7 @@ MonoBehaviour:
   effectSpawnPortal: {fileID: 6773138242497210531}
   effectCloseAllPortal: {fileID: 3491933613255447977}
   animatorGun: {fileID: 1406452276768597099}
+  MaxGrabDistance: 3.5
   color32Gun:
   - serializedVersion: 2
     rgba: 4278219007
