@@ -137,7 +137,8 @@ namespace Xuwu.FourDimensionalPortals.Demo
         {
             _grabbedRigidbody = null;
             // Скрываем GrabInfo при принудительном отпускании объекта
-            GrabInfo.Instance.ActiveIcon(false);
+            if (GrabInfo.Instance != null)
+                GrabInfo.Instance.ActiveIcon(false);
         }
         private void FixedUpdate()
         {
@@ -192,7 +193,7 @@ namespace Xuwu.FourDimensionalPortals.Demo
                         if (!PortalSystem.IsRaycastHitValid(hit))
                             continue;
 
-                        if (hit.collider == hitPortal.LinkedPortal.PlaneMeshCollider)
+                        if (hitPortal.LinkedPortal != null && hit.collider == hitPortal.LinkedPortal.PlaneMeshCollider)
                             continue;
 
                         targetRigidbody = hit.rigidbody;
@@ -459,7 +460,8 @@ namespace Xuwu.FourDimensionalPortals.Demo
                 Debug.Log("DEBUG: ОТПУСКАЕМ объект: " + _grabbedRigidbody.name);
                 _grabbedRigidbody = null;
                 // Скрываем GrabInfo при отпускании объекта
-                GrabInfo.Instance.ActiveIcon(false);
+                if (GrabInfo.Instance != null)
+                    GrabInfo.Instance.ActiveIcon(false);
                 return;
             }
 
@@ -509,7 +511,7 @@ namespace Xuwu.FourDimensionalPortals.Demo
                         if (!PortalSystem.IsRaycastHitValid(hit))
                             continue;
 
-                        if (hit.collider == hitPortal.LinkedPortal.PlaneMeshCollider)
+                        if (hitPortal.LinkedPortal != null && hit.collider == hitPortal.LinkedPortal.PlaneMeshCollider)
                             continue;
 
                         targetRigidbody = hit.rigidbody;
@@ -533,12 +535,17 @@ namespace Xuwu.FourDimensionalPortals.Demo
                     _grabbedRigidbody = targetRigidbody;
                 
                 // Скрываем GrabInfo при успешном захвате объекта
-                GrabInfo.Instance.ActiveIcon(false);
+                if (GrabInfo.Instance != null)
+                    GrabInfo.Instance.ActiveIcon(false);
             }
         }
 
         private void CheckForGrabTarget()
         {
+            // Проверяем, что GrabInfo.Instance существует
+            if (GrabInfo.Instance == null)
+                return;
+
             // Если уже захвачен объект, скрываем GrabInfo
             if (_grabbedRigidbody)
             {
@@ -592,11 +599,11 @@ namespace Xuwu.FourDimensionalPortals.Demo
                         if (!PortalSystem.IsRaycastHitValid(hit))
                             continue;
 
-                        if (hit.collider == hitPortal.LinkedPortal.PlaneMeshCollider)
+                        if (hitPortal.LinkedPortal != null && hit.collider == hitPortal.LinkedPortal.PlaneMeshCollider)
                             continue;
 
                         // Проверяем, является ли объект Box
-                        if (hit.rigidbody.TryGetComponent(out Box _))
+                        if (hit.rigidbody != null && hit.rigidbody.TryGetComponent(out Box _))
                         {
                             foundGrabTarget = true;
                         }
@@ -606,7 +613,7 @@ namespace Xuwu.FourDimensionalPortals.Demo
                 else
                 {
                     // Проверяем, является ли объект Box
-                    if (hit.rigidbody.TryGetComponent(out Box _))
+                    if (hit.rigidbody != null && hit.rigidbody.TryGetComponent(out Box _))
                     {
                         foundGrabTarget = true;
                     }
@@ -616,7 +623,8 @@ namespace Xuwu.FourDimensionalPortals.Demo
             }
 
             // Показываем или скрываем GrabInfo в зависимости от того, наведены ли мы на Box
-            GrabInfo.Instance.ActiveIcon(foundGrabTarget);
+            if (GrabInfo.Instance != null)
+                GrabInfo.Instance.ActiveIcon(foundGrabTarget);
         }
     }
 }
