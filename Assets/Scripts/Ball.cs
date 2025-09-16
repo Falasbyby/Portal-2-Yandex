@@ -15,7 +15,7 @@ public class Ball : MonoBehaviour
     public Rigidbody Rigidbody => _rigidBody;
     public bool finish = false;
     private int bounceCount = 0;
-
+    private float timerRotate = 0;
 
     private void Start()
     {
@@ -40,13 +40,11 @@ public class Ball : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-
         // Всегда поддерживаем постоянную скорость
-        /* if (_rigidBody.velocity.magnitude > 0)
+        if (_rigidBody.velocity.magnitude > 0)
         {
             _rigidBody.velocity = _rigidBody.velocity.normalized * MaxVelocity;
-        } */
+        }
     }
     private void Update()
     {
@@ -57,8 +55,11 @@ public class Ball : MonoBehaviour
         if (_rigidBody.velocity.magnitude > 0)
         {
             _rigidBody.velocity = _rigidBody.velocity.normalized * MaxVelocity;
+
+
         }
-        Debug.Log("IsSleeping: " + _rigidBody.IsSleeping());
+        _rigidBody.angularVelocity = Vector3.zero;
+        transform.localEulerAngles = Vector3.zero;
     }
     private void LateUpdate()
     {
