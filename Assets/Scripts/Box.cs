@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem effect;
+
     private Vector3 startPos;
     void Start()
     {
@@ -12,6 +14,12 @@ public class Box : MonoBehaviour
 
     public void RestartBox()
     {
+        effect.gameObject.transform.SetParent(null);
+        effect.gameObject.transform.position = transform.position;
+        effect.Play();
+        effect.GetComponent<AudioSource>().Play();
         transform.position = startPos;
+      
+
     }
 }

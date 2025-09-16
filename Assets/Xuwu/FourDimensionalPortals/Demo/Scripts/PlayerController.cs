@@ -64,8 +64,9 @@ namespace Xuwu.FourDimensionalPortals.Demo
         {
             if (isMobile)
                 return;
-            _lookInput = new Vector2(Input.GetAxis("Mouse X") * sensitivity * 3,
-                -Input.GetAxis("Mouse Y") * sensitivity) * 3.5f;
+            // Используем фиксированную чувствительность независимо от FPS
+            _lookInput = new Vector2(Input.GetAxis("Mouse X") * sensitivity,
+                -Input.GetAxis("Mouse Y") * sensitivity);
             // _lookInput = value.Get<Vector2>() * new Vector2(sensitivity, sensitivity);
         }
 
@@ -97,7 +98,8 @@ namespace Xuwu.FourDimensionalPortals.Demo
 
         public void UpdateSensitivity()
         {
-            sensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 0.2f);
+            // Устанавливаем более разумную чувствительность по умолчанию
+            sensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 100f)*1000;
         }
 
         public void OnSwitchView(InputValue value)
@@ -160,14 +162,17 @@ namespace Xuwu.FourDimensionalPortals.Demo
             if (isMobile)
             {
                 _moveInput = new Vector2(SimpleInput.GetAxisRaw("Horizontal"), SimpleInput.GetAxisRaw("Vertical"));
-                _lookInput = new Vector2(SimpleInput.GetAxisRaw("LookX") * sensitivity,
-                    -SimpleInput.GetAxisRaw("LookY") * sensitivity);
+                // Для мобильных устройств используем фиксированную чувствительность
+                _lookInput = new Vector2(SimpleInput.GetAxisRaw("LookX") * sensitivity * Time.deltaTime,
+                    -SimpleInput.GetAxisRaw("LookY") * sensitivity * Time.deltaTime);
                 _isJump = SimpleInput.GetButton("Jump");
             }
             else
             {
                 _moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
+                // Обработка ввода мыши для десктопа
+                _lookInput = new Vector2(Input.GetAxis("Mouse X") * sensitivity,
+                    -Input.GetAxis("Mouse Y") * sensitivity);
                 _isJump = Input.GetButton("Jump");
             }
         }
@@ -255,12 +260,12 @@ namespace Xuwu.FourDimensionalPortals.Demo
             //horizontal rotation
             if (_isFirstPersonView)
             {
-                transform.rotation *= Quaternion.AngleAxis(_lookInput.x, transform.up);
+                transform.rotation *= Quaternion.AngleAxis(_lookInput.x * Time.fixedDeltaTime, transform.up);
                 _rotationHandle.localRotation = Quaternion.identity;
             }
             else
             {
-                _rotationHandle.localRotation *= Quaternion.AngleAxis(_lookInput.x, Vector3.up);
+                _rotationHandle.localRotation *= Quaternion.AngleAxis(_lookInput.x * Time.fixedDeltaTime, Vector3.up);
 
                 if (_smoothMoveInput.magnitude > .1f)
                 {
@@ -352,7 +357,8 @@ namespace Xuwu.FourDimensionalPortals.Demo
             if (menuGame.currentMenuActive || !uiGame.isGameActive)
                 return;
 
-            _xRotation += _lookInput.y;
+            // Применяем поворот камеры с учетом deltaTime для независимости от FPS
+            _xRotation += _lookInput.y * Time.deltaTime;
             _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
 
             _cameraFollowTarget.localRotation = Quaternion.AngleAxis(_xRotation, Vector3.right);
