@@ -115,8 +115,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5708957300972532124, guid: d1417fb2825d2b2489e2badafb1ecb4c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7175007245474417568}
   m_SourcePrefab: {fileID: 100100000, guid: d1417fb2825d2b2489e2badafb1ecb4c, type: 3}
+--- !u!1 &4690658577521003541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5708957300972532124, guid: d1417fb2825d2b2489e2badafb1ecb4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1018617762262580617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &7175007245474417568
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690658577521003541}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!4 &8321229774661892851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9032014207103551354, guid: d1417fb2825d2b2489e2badafb1ecb4c,
@@ -23328,11 +23365,6 @@ PrefabInstance:
       objectReference: {fileID: 4877955080561406530}
     - target: {fileID: 8036936854077435697, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
         type: 3}
-      propertyPath: buttonTopRigid
-      value: 
-      objectReference: {fileID: 4877955080561406541}
-    - target: {fileID: 8036936854077435697, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
-        type: 3}
       propertyPath: buttonLowerLimit
       value: 
       objectReference: {fileID: 4877955081881973804}
@@ -23400,12 +23432,6 @@ Transform:
 --- !u!4 &4877955080561406530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8036936854494077035, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 3186601514918597161}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &4877955080561406541 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 8036936854494077028, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
     type: 3}
   m_PrefabInstance: {fileID: 3186601514918597161}
   m_PrefabAsset: {fileID: 0}

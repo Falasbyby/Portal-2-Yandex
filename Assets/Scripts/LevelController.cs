@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+﻿using CrazyGames;
+using UnityEngine;
 using YG;
 
 public class LevelController : Singleton<LevelController>
 {
     
-    [SerializeField] private Level[] levels;
-    [SerializeField] private int[] countLevels;
+    [SerializeField] private int countLevels;
     private int currentLevelIndex;
 
     public int GetCurrentLevel => currentLevelIndex;
@@ -13,6 +13,7 @@ public class LevelController : Singleton<LevelController>
     public bool maxLevel;
     private void Start()
     {
+        CrazySDK.Game.GameplayStart();
         // Проверяем, что выбранный уровень не превышает максимальный открытый уровень
         if (YG2.saves.currentLevel > YG2.saves.maxOpenLevel)
         {
@@ -21,7 +22,7 @@ public class LevelController : Singleton<LevelController>
         
         currentLevelIndex = YG2.saves.currentLevel;
         
-        int maxLevelIndex = countLevels.Length - 1;
+        int maxLevelIndex = countLevels - 1;
         if (currentLevelIndex >= maxLevelIndex)
         {
             currentLevelIndex = maxLevelIndex; // Set the current level to the maximum if all levels are completed
@@ -33,7 +34,7 @@ public class LevelController : Singleton<LevelController>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L) && Input.GetKeyDown(KeyCode.O) && Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.L) && Input.GetKeyDown(KeyCode.K))
         {
             UiGame.Instance.WinActiveContainer();
         }
@@ -52,6 +53,7 @@ public class LevelController : Singleton<LevelController>
         
         YG2.SaveProgress();
         YG2.InterstitialAdvShow();
+        
     }
     
     // Метод для выбора уровня из меню

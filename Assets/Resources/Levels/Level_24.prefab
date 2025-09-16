@@ -931,7 +931,7 @@ PrefabInstance:
         type: 3}
       propertyPath: buttonTopRigid
       value: 
-      objectReference: {fileID: 1346851574609297347}
+      objectReference: {fileID: 0}
     - target: {fileID: 5752792369912232192, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
         type: 3}
       propertyPath: buttonLowerLimit
@@ -1036,7 +1036,7 @@ PrefabInstance:
         type: 3}
       propertyPath: buttonTopRigid
       value: 
-      objectReference: {fileID: 1346851574609297347}
+      objectReference: {fileID: 0}
     - target: {fileID: 8671752772742271597, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
         type: 3}
       propertyPath: buttonLowerLimit
@@ -1052,12 +1052,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e2b6e5af5c5c474d8971b51ad2031c7, type: 3}
---- !u!54 &1346851574609297347 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 8036936854494077028, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 9022985097055199143}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1346851574609297356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8036936854494077035, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,

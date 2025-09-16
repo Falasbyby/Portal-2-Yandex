@@ -1126,7 +1126,7 @@ PrefabInstance:
         type: 3}
       propertyPath: buttonTopRigid
       value: 
-      objectReference: {fileID: 2421387272678575889}
+      objectReference: {fileID: 0}
     - target: {fileID: 8036936854077435697, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
         type: 3}
       propertyPath: buttonLowerLimit
@@ -1185,12 +1185,6 @@ PrefabInstance:
 --- !u!4 &979075894383156679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4865279369921098418, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 5625718974847512437}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &2421387272678575889 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 8036936854494077028, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
     type: 3}
   m_PrefabInstance: {fileID: 5625718974847512437}
   m_PrefabAsset: {fileID: 0}

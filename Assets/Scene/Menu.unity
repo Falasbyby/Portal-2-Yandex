@@ -3501,7 +3501,7 @@ MonoBehaviour:
   buttonLevelPrefab: {fileID: 9174078378340707400, guid: 01cea159eb3a52c4bae8f221ae0bc07b,
     type: 3}
   gridParent: {fileID: 1795009662}
-  totalLevels: 37
+  totalLevels: 34
   startGameButton: {fileID: 1273309824}
 --- !u!224 &1584571748
 RectTransform:

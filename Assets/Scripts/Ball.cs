@@ -38,62 +38,70 @@ public class Ball : MonoBehaviour
         _rigidBody.velocity = transform.forward.normalized * MaxVelocity;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (finish)
             return;
 
         _lastFrameVelocity = _rigidBody.velocity;
 
-        if (_rigidBody.velocity.magnitude < MaxVelocity)
+        // Всегда поддерживаем постоянную скорость
+        if (_rigidBody.velocity.magnitude > 0)
+        {
+           // _rigidBody.velocity = _rigidBody.velocity.normalized * MaxVelocity;
+        }
+    }
+    private void LateUpdate()
+    {
+        if (finish)
+            return;
+        if (_rigidBody.velocity.magnitude > 0)
         {
             _rigidBody.velocity = _rigidBody.velocity.normalized * MaxVelocity;
         }
+    }
 
-        // Уберите этот блок кода, чтобы шар не получал случайную скорость при нулевой скорости
-        // else if (_rigidBody.velocity.magnitude > MaxVelocity)
-        // {
-        //     _rigidBody.velocity = _rigidBody.velocity.normalized * MaxVelocity;
-        // }
+    private void Update()
+    {
+        if (finish)
+            return;
 
-        if (_rigidBody.velocity.magnitude > 0)
+        // Поворот шарика в направлении движения (только визуальный эффект)
+       /*  if (_rigidBody.velocity.magnitude > 0.1f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(_rigidBody.velocity.normalized, Vector3.up);
-            transform.rotation = targetRotation;
-        }
-        else
-        {
-            // Уберите следующие строки, которые задают случайное направление
-            // float randomX = Random.Range(-1.0f, 1.0f);
-            // float randomZ = Random.Range(-1.0f, 1.0f);
-            // Vector3 randomDirection = new Vector3(randomX, 0.0f, randomZ).normalized;
-            // _rigidBody.velocity = randomDirection * MaxVelocity;
-        }
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+        } */
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("CollisionEnter _ball");
+        Debug.Log("1");
         if (collision.collider.GetComponent<ExitBallPlatform>())
         {
+            Debug.Log("2");
             finish = true;
             _rigidBody.isKinematic = true;
             Destroy(GetComponent<PortalTraveler>());
             Destroy(GetComponent<SphereCollider>());
             Destroy(GetComponent<MeshRenderer>());
             Destroy(transform.GetChild(0).gameObject);
-            
+
             collision.collider.GetComponent<ExitBallPlatform>().Finish();
             return;
         }
-
+        Debug.Log("3");
         if (portalTraveler.PenetratingPortal == null)
         {
+            Debug.Log("4");
             Bounce(collision.contacts[0].normal);
             bounceCount++;
             Instantiate(effectWall, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
 
             if (bounceCount > 4)
             {
+                Debug.Log("5");
                 Destroy(gameObject);
             }
         }
@@ -103,6 +111,7 @@ public class Ball : MonoBehaviour
     {
         var direction = Vector3.Reflect(_lastFrameVelocity.normalized, collisionNormal);
 
+        // Устанавливаем скорость сразу после отскока
         _rigidBody.velocity = direction * MaxVelocity;
     }
 }

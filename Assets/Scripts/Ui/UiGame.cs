@@ -1,4 +1,5 @@
 using System.Collections;
+using CrazyGames;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -107,17 +108,17 @@ public class UiGame : Singleton<UiGame>
 
     public void WinActiveContainer()
     {
+        CrazySDK.Game.GameplayStop();
         MobileInputManager.Instance.ActiveMobileContainer();
         audioSource.clip = winClip;
         audioSource.Play();
-
+        CrazyGames.CrazySDK.Game.HappyTime();
 
         isGameActive = false;
         YG2.saves.timerLider = timerRun;
         if (LevelController.Instance.maxLevel)
         {
             Fade.Instance.ActiveFade(true,0);
-
         }
         else
         {
