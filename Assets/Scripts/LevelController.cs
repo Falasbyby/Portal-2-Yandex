@@ -4,7 +4,7 @@ using YG;
 
 public class LevelController : Singleton<LevelController>
 {
-    
+
     [SerializeField] private int countLevels;
     private int currentLevelIndex;
 
@@ -19,16 +19,16 @@ public class LevelController : Singleton<LevelController>
         {
             YG2.saves.currentLevel = YG2.saves.maxOpenLevel;
         }
-        
+
         currentLevelIndex = YG2.saves.currentLevel;
-        
+
         int maxLevelIndex = countLevels - 1;
         if (currentLevelIndex >= maxLevelIndex)
         {
             currentLevelIndex = maxLevelIndex; // Set the current level to the maximum if all levels are completed
             maxLevel = true;
         }
-        
+
         InstantiateLevelFromResources();
     }
 
@@ -44,18 +44,18 @@ public class LevelController : Singleton<LevelController>
     {
         currentLevelIndex++;
         YG2.saves.currentLevel = currentLevelIndex;
-        
+
         // Обновляем максимальный открытый уровень, если текущий уровень больше
         if (currentLevelIndex > YG2.saves.maxOpenLevel)
         {
             YG2.saves.maxOpenLevel = currentLevelIndex;
         }
-        
+
         YG2.SaveProgress();
         YG2.InterstitialAdvShow();
-        
+
     }
-    
+
     // Метод для выбора уровня из меню
     public void SelectLevel(int levelIndex)
     {
@@ -73,19 +73,31 @@ public class LevelController : Singleton<LevelController>
     private void InstantiateLevelFromResources()
     {
         // Предположим, что уровни находятся в папке "Resources/Levels
-        Level level = Resources.Load<Level>("Levels/" + "Level_" + (currentLevelIndex+1));
-
+        Level level = Resources.Load<Level>("Levels/" + "Level_" + (currentLevelIndex + 1));
+        Level levelObject = null;
         if (level != null)
         {
-            Instantiate(level, transform);
+            levelObject = Instantiate(level, transform);
         }
         else
         {
-            Debug.LogError("Level not found in Resources: " + "Levels_" + (currentLevelIndex+1));
+            Debug.LogError("Level not found in Resources: " + "Levels_" + (currentLevelIndex + 1));
         }
+        /* if (levelObject != null)
+        {
+            MeshCollider[] meshCollider = levelObject.GetComponentsInChildren<MeshCollider>();
+            foreach (MeshCollider mesh in meshCollider)
+            {
+                MeshFilter meshRenderer = mesh.GetComponent<MeshFilter>();
+                mesh.sharedMesh = meshRenderer.sharedMesh;
+                mesh.enabled = false;
+                mesh.enabled = true;
+                Debug.Log("MeshCollider enabled: " + mesh.gameObject.name);
+            }
+        } */
     }
-   
-  
 
-   
+
+
+
 }

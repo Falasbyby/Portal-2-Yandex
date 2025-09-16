@@ -40,40 +40,42 @@ public class Ball : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (finish)
-            return;
 
-        _lastFrameVelocity = _rigidBody.velocity;
 
         // Всегда поддерживаем постоянную скорость
-        if (_rigidBody.velocity.magnitude > 0)
-        {
-           // _rigidBody.velocity = _rigidBody.velocity.normalized * MaxVelocity;
-        }
-    }
-    private void LateUpdate()
-    {
-        if (finish)
-            return;
-        if (_rigidBody.velocity.magnitude > 0)
+        /* if (_rigidBody.velocity.magnitude > 0)
         {
             _rigidBody.velocity = _rigidBody.velocity.normalized * MaxVelocity;
-        }
+        } */
     }
-
     private void Update()
     {
         if (finish)
             return;
 
-        // Поворот шарика в направлении движения (только визуальный эффект)
-       /*  if (_rigidBody.velocity.magnitude > 0.1f)
+        _lastFrameVelocity = _rigidBody.velocity;
+        if (_rigidBody.velocity.magnitude > 0)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(_rigidBody.velocity.normalized, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+            _rigidBody.velocity = _rigidBody.velocity.normalized * MaxVelocity;
+        }
+        Debug.Log("IsSleeping: " + _rigidBody.IsSleeping());
+    }
+    private void LateUpdate()
+    {
+        if (finish)
+            return;
+        /* if (_rigidBody.velocity.magnitude > 0)
+        {
+            _rigidBody.velocity = _rigidBody.velocity.normalized * MaxVelocity;
         } */
     }
 
+
+    private void OnCollisionStay(Collision other)
+    {
+        Debug.Log("CollisionStay _ball");
+        Debug.Log("8888");
+    }
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("CollisionEnter _ball");
