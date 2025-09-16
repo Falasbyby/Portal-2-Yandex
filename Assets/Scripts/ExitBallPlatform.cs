@@ -13,7 +13,7 @@ public class ExitBallPlatform : MonoBehaviour
     private void Start()
     {
         RaycastHit hit;
-
+        lineRenderer = GetComponentInChildren<LineRenderer>();
         if (Physics.Raycast(startPosLine.transform.position, startPosLine.transform.forward * 10, out hit))
         {
             lineRenderer.SetPosition(0,startPosLine.transform.position);

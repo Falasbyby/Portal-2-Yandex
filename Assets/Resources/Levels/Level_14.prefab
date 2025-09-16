@@ -470,7 +470,7 @@ PrefabInstance:
         type: 3}
       propertyPath: lineRenderer
       value: 
-      objectReference: {fileID: 7222224848019928865}
+      objectReference: {fileID: 8352718758874538241}
     - target: {fileID: 6345149989519011013, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
         type: 3}
       propertyPath: m_Layer
@@ -596,12 +596,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 98387742093008790}
   m_PrefabAsset: {fileID: 0}
---- !u!120 &7222224848019928865 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 7307077315816515767, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 98387742093008790}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7966673282275344098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8057718210250219892, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
@@ -611,6 +605,12 @@ Transform:
 --- !u!4 &7986399867126871680 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8036936854586927382, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 98387742093008790}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &8352718758874538241 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 8266174965179596439, guid: 6e2b6e5af5c5c474d8971b51ad2031c7,
     type: 3}
   m_PrefabInstance: {fileID: 98387742093008790}
   m_PrefabAsset: {fileID: 0}
