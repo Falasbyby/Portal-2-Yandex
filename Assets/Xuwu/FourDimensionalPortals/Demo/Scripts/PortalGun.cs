@@ -114,6 +114,8 @@ namespace Xuwu.FourDimensionalPortals.Demo
                 }
             }
 
+            // Проверяем наведение на объекты для показа GrabInfo
+            CheckForGrabTarget();
         }
 
         public void ClosePortal()
@@ -134,6 +136,8 @@ namespace Xuwu.FourDimensionalPortals.Demo
         public void GrabOff()   
         {
             _grabbedRigidbody = null;
+            // Скрываем GrabInfo при принудительном отпускании объекта
+            GrabInfo.Instance.ActiveIcon(false);
         }
         private void FixedUpdate()
         {
@@ -454,6 +458,8 @@ namespace Xuwu.FourDimensionalPortals.Demo
             {
                 Debug.Log("DEBUG: ОТПУСКАЕМ объект: " + _grabbedRigidbody.name);
                 _grabbedRigidbody = null;
+                // Скрываем GrabInfo при отпускании объекта
+                GrabInfo.Instance.ActiveIcon(false);
                 return;
             }
 
@@ -525,7 +531,92 @@ namespace Xuwu.FourDimensionalPortals.Demo
                     _grabbedRigidbody = rigidbodyGhost.SourceRigidbody;
                 else
                     _grabbedRigidbody = targetRigidbody;
+                
+                // Скрываем GrabInfo при успешном захвате объекта
+                GrabInfo.Instance.ActiveIcon(false);
             }
+        }
+
+        private void CheckForGrabTarget()
+        {
+            // Если уже захвачен объект, скрываем GrabInfo
+            if (_grabbedRigidbody)
+            {
+                GrabInfo.Instance.ActiveIcon(false);
+                return;
+            }
+
+            float gunScale = Vector3.Dot(Vector3.one, transform.lossyScale) / 3f;
+            var origin = transform.position;
+            var direction = transform.forward;
+            var maxGrabDistance = MaxGrabDistance * gunScale;
+
+            int hitCount = Physics.RaycastNonAlloc(origin, direction, s_hitResultsBuffer, maxGrabDistance,
+                Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore);
+            PhysicsUtils.SortRaycastHits(new Span<RaycastHit>(s_hitResultsBuffer, 0, hitCount));
+
+            bool foundGrabTarget = false;
+
+            for (int i = 0; i < hitCount; i++)
+            {
+                var hit = s_hitResultsBuffer[i];
+
+                if (!PortalSystem.IsRaycastHitValid(hit))
+                    continue;
+
+                if (!hit.rigidbody)
+                    break;
+
+                if (hit.rigidbody.TryGetComponent(out Portal hitPortal))
+                {
+                    if (hit.collider != hitPortal.PlaneMeshCollider)
+                        break;
+
+                    if (!hitPortal.IsWorkable())
+                        break;
+
+                    var maxHitPoint = hitPortal.TransferPoint(origin + direction * maxGrabDistance);
+
+                    origin = hitPortal.TransferPoint(origin + direction * hit.distance);
+                    direction = hitPortal.TransferDirection(direction);
+                    maxGrabDistance = Vector3.Distance(origin, maxHitPoint);
+
+                    hitCount = Physics.RaycastNonAlloc(origin, direction, s_hitResultsBuffer, maxGrabDistance,
+                        Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore);
+                    PhysicsUtils.SortRaycastHits(new Span<RaycastHit>(s_hitResultsBuffer, 0, hitCount));
+
+                    for (int j = 0; j < hitCount; j++)
+                    {
+                        hit = s_hitResultsBuffer[j];
+
+                        if (!PortalSystem.IsRaycastHitValid(hit))
+                            continue;
+
+                        if (hit.collider == hitPortal.LinkedPortal.PlaneMeshCollider)
+                            continue;
+
+                        // Проверяем, является ли объект Box
+                        if (hit.rigidbody.TryGetComponent(out Box _))
+                        {
+                            foundGrabTarget = true;
+                        }
+                        break;
+                    }
+                }
+                else
+                {
+                    // Проверяем, является ли объект Box
+                    if (hit.rigidbody.TryGetComponent(out Box _))
+                    {
+                        foundGrabTarget = true;
+                    }
+                }
+
+                break;
+            }
+
+            // Показываем или скрываем GrabInfo в зависимости от того, наведены ли мы на Box
+            GrabInfo.Instance.ActiveIcon(foundGrabTarget);
         }
     }
 }

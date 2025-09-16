@@ -46,7 +46,7 @@ public class LevelController : Singleton<LevelController>
       
         currentLevelIndex++;
         PlayerPrefs.SetInt("CurrentLevel", currentLevelIndex);
-        YandexGame.FullscreenShow();
+        YG2.InterstitialAdvShow();
     }
     private void InstantiateLevelFromResources()
     {
