@@ -3,6 +3,9 @@ using System.IO;
 using UnityEngine;
 using YG.Utils;
 using YG.Insides;
+#if CrazyGamesPlatform_yg
+using CrazyGames;
+#endif
 #if NJSON_STORAGE_YG2
 using Newtonsoft.Json;
 #endif
@@ -80,6 +83,29 @@ namespace YG
 
             saves.idSave++;
 #if !UNITY_EDITOR
+#if CrazyGamesPlatform_yg
+            if (CrazySDK.User.IsUserAccountAvailable)
+            {
+                CrazySDK.User.GetUser(user =>
+                {
+                    if (user != null)
+                    {
+                        // Если пользователь зарегистрирован - сохраняем в облако
+                        YGInsides.SaveCloud();
+                    }
+                    else
+                    {
+                        // Если пользователь не зарегистрирован - сохраняем локально
+                        YGInsides.SaveLocal();
+                    }
+                });
+            }
+            else
+            {
+                // Если аккаунт недоступен - сохраняем локально
+                YGInsides.SaveLocal();
+            }
+#endif
             if (infoYG.Storage.saveLocal)
                 YGInsides.SaveLocal();
 
@@ -102,10 +128,34 @@ namespace YG.Insides
         public static void LoadProgress()
         {
 #if !UNITY_EDITOR
+#if CrazyGamesPlatform_yg
+            if (CrazySDK.User.IsUserAccountAvailable)
+            {
+                CrazySDK.User.GetUser(user =>
+                {
+                    if (user != null)
+                    {
+                        // Если пользователь зарегистрирован - загружаем из облака
+                        LoadCloud();
+                    }
+                    else
+                    {
+                        // Если пользователь не зарегистрирован - загружаем локально
+                        LoadLocal();
+                    }
+                });
+            }
+            else
+            {
+                // Если аккаунт недоступен - загружаем локально
+                LoadLocal();
+            }
+#else
             if (infoYG.Storage.saveCloud)
                 LoadCloud();
             else 
                 LoadLocal();
+#endif
 #else
             LoadEditor();
 #endif
