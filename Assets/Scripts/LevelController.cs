@@ -1,4 +1,6 @@
-﻿using CrazyGames;
+﻿#if CrazyGamesPlatform_yg
+using CrazyGames;
+#endif
 using UnityEngine;
 using YG;
 
@@ -13,7 +15,9 @@ public class LevelController : Singleton<LevelController>
     public bool maxLevel;
     private void Start()
     {
+#if CrazyGamesPlatform_yg
         CrazySDK.Game.GameplayStart();
+#endif
         // Проверяем, что выбранный уровень не превышает максимальный открытый уровень
         if (YG2.saves.currentLevel > YG2.saves.maxOpenLevel)
         {

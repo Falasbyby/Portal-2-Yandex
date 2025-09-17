@@ -1,5 +1,7 @@
 using System.Collections;
+#if CrazyGamesPlatform_yg
 using CrazyGames;
+#endif
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -108,11 +110,15 @@ public class UiGame : Singleton<UiGame>
 
     public void WinActiveContainer()
     {
+#if CrazyGamesPlatform_yg
         CrazySDK.Game.GameplayStop();
+#endif
         MobileInputManager.Instance.ActiveMobileContainer();
         audioSource.clip = winClip;
         audioSource.Play();
+#if CrazyGamesPlatform_yg
         CrazyGames.CrazySDK.Game.HappyTime();
+#endif
 
         isGameActive = false;
         YG2.saves.timerLider = timerRun;
